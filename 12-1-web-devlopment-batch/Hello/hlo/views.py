@@ -8,4 +8,4 @@ def car(request):
     return HttpResponse("ok")
 
 def showthis(request):
-    return render(request, 'auth/thisfile.html')
+    return render(request, 'thisfile.html')
