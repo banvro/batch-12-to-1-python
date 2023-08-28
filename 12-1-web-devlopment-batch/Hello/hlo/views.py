@@ -5,6 +5,7 @@ from django.http import HttpResponse
 
 
 def car(request):
-    print("xyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy")
-
     return HttpResponse("ok")
+
+def showthis(request):
+    return render(request, 'auth/thisfile.html')
