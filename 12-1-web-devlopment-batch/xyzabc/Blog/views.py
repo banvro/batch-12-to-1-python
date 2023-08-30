@@ -5,3 +5,10 @@ from django.http import HttpResponse
 
 def showok(request):
     return HttpResponse("this is me....")
+
+def thisis(request):
+    return HttpResponse("noooooooooo")
+
+
+def showpage(request):
+    return render(request, 'xyz.html')

@@ -3,5 +3,7 @@ from Blog import views
 
 
 urlpatterns = [
-    path("xyz", views.showok)
+    path("", views.showok),
+    path("abc", views.thisis),
+    path("showthis", views.showpage)
 ]
