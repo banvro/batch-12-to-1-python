@@ -6,4 +6,6 @@ urlpatterns = [
     path("done", views.done),
     path("ok", views.ok),
     path("showpage", views.showthispage),
+    path("newpage", views.newpage),
+    path("vishal", views.vishal),
 ]

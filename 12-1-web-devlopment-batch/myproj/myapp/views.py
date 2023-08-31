@@ -19,4 +19,11 @@ def showthispage(request):
     return render(request, 'xyz.html')
 
 
+def newpage(request):
+    return render(request, 'abc.html')
+
+def vishal(request):
+    return render(request, 'new.html')
+
+
 
