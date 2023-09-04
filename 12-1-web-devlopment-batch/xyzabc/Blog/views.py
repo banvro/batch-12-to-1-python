@@ -12,3 +12,8 @@ def thisis(request):
 
 def showpage(request):
     return render(request, 'xyz.html')
+
+
+
+def myform(request):
+    return render(request, 'saveinfo.html')

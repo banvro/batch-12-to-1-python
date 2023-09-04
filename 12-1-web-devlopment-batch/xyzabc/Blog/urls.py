@@ -5,5 +5,6 @@ from Blog import views
 urlpatterns = [
     path("", views.showok),
     path("abc", views.thisis),
-    path("showthis", views.showpage)
+    path("showthis", views.showpage),
+    path("from", views.myform)
 ]
