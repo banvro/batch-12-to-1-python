@@ -3,8 +3,10 @@ from Blog import views
 
 
 urlpatterns = [
-    path("", views.showok),
+    path("xyz", views.showok),
     path("abc", views.thisis),
     path("showthis", views.showpage),
-    path("from", views.myform)
+    path("", views.myform, name = "xyz"),
+
+    path("hit-my-data", views.savedata)
 ]
