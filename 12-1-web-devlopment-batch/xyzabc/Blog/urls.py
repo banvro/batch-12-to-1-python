@@ -8,5 +8,8 @@ urlpatterns = [
     path("showthis", views.showpage),
     path("", views.myform, name = "xyz"),
 
-    path("hit-my-data", views.savedata)
+    path("hit-my-data", views.savedata),
+
+    path('first', views.first),
+    path('second', views.second)
 ]

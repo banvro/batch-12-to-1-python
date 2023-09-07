@@ -36,3 +36,13 @@ def savedata(request):
 
         
     return HttpResponse("i am hitted....")
+
+
+
+
+
+def first(request):
+    return render(request, 'first.html')
+
+def second(request):
+    return render(request, 'second.html')
