@@ -11,6 +11,12 @@ urlpatterns = [
 
     path("", views.home),
     path("about-us", views.about),
-    path("contact", views.contact),
+    path("contact", views.contact, name="xyz"),
+
+
+    # path("", views.myform, name = "xyz"),
+
+    path("hit-my-data", views.savedata),
+
    
 ]

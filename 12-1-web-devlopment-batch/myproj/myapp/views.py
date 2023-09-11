@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from myapp.models import StudentsInfo
 # Create your views here.
 
 def thisis(request):
@@ -33,4 +34,24 @@ def about(request):
     return render(request, "about.html")
 
 def contact(request):
-    return render(request, "contact.html")
+    mydata = StudentsInfo.objects.all().order_by('-id')
+    print(mydata)
+    return render(request, "contact.html", {"data" : mydata})
+
+
+def savedata(request):
+    if request.method == 'POST':
+        userid = request.POST.get('id')
+        firt_name = request.POST.get('fname')
+        l_name = request.POST.get('lanme')
+        number = request.POST.get('phone')
+        disc = request.POST.get('dec')
+
+        savemydata = StudentsInfo(stu_id = userid, stu_f_name = firt_name, stu_l_name = l_name, phone_number = number, stu_message = disc)
+
+        savemydata.save()
+
+        return redirect("xyz")
+
+        
+    return HttpResponse("i am hitted....")

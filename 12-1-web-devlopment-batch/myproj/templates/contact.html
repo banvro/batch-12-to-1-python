@@ -3,6 +3,23 @@
 
 {% block body %}
 
-<h1>i am contact page</h1>
+{% comment %} {{data}} {% endcomment %}
+
+
+<div class="row" style="padding: 63px; margin-top: -25px;">
+
+    {% for dt in data %}
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card" style="margin-top: 22px;">
+        <div class="card-body">
+          <h5 class="card-title">{{dt.stu_f_name}} {{dt.stu_l_name}}</h5>
+          <p class="card-text">{{dt.stu_message}}</p>
+          <p>{{dt.phone_number}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    
+  </div>
 
 {% endblock body %}
