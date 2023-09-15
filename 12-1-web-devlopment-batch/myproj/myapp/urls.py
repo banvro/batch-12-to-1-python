@@ -18,5 +18,10 @@ urlpatterns = [
 
     path("hit-my-data", views.savedata),
 
+    path("delete/<int:id>", views.deletethis),
+    path("update/<int:id>", views.updatethis),
+    path("showupdate/<int:id>", views.showupdate),
+
+
    
 ]

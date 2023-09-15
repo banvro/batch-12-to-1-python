@@ -16,6 +16,20 @@
           <p class="card-text">{{dt.stu_message}}</p>
           <p>{{dt.phone_number}}</p>
         </div>
+        <div style="display: flex; justify-content: space-evenly; margin-bottom: 13px;">
+
+          <form action="update/{{dt.id}}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success"> Update </button>
+          </form>
+
+          <form action="delete/{{dt.id}}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger"> Delete </button>
+          </form>
+
+
+        </div>
       </div>
     </div>
     {% endfor %}

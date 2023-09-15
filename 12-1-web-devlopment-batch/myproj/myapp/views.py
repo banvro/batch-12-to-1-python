@@ -55,3 +55,16 @@ def savedata(request):
 
         
     return HttpResponse("i am hitted....")
+
+
+def deletethis(request, id):
+    data = StudentsInfo.objects.get(id = id)
+    data.delete()
+    return redirect("xyz")
+    return HttpResponse(f" i am delete {id}")
+
+def updatethis(request, id):
+    return HttpResponse(f" i am update this function {id}")
+
+def showupdate(request):
+    return HttpResponse(" i am showupdate")
