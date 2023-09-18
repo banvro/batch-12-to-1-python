@@ -64,7 +64,28 @@ def deletethis(request, id):
     return HttpResponse(f" i am delete {id}")
 
 def updatethis(request, id):
-    return HttpResponse(f" i am update this function {id}")
+    if request.method == 'POST':
+        userid = request.POST.get('id')
+        firt_name = request.POST.get('fname')
+        l_name = request.POST.get('lanme')
+        number = request.POST.get('phone')
+        disc = request.POST.get('dec')
+        print(userid, firt_name)
+        mydata = StudentsInfo.objects.get(id = id)
 
-def showupdate(request):
-    return HttpResponse(" i am showupdate")
+        mydata.stu_id = userid
+        mydata.stu_f_name = firt_name
+        mydata.stu_l_name = l_name
+        mydata.phone_number = number
+        mydata.stu_message = disc
+
+        mydata.save()
+
+        print(mydata)
+
+        return redirect("xyz")
+
+def showupdate(request, id):
+    mydata = StudentsInfo.objects.get(id = id)
+   
+    return render(request, "updatethis.html", {"data" : mydata})

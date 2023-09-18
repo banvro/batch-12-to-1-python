@@ -14,11 +14,11 @@
         <div class="card-body">
           <h5 class="card-title">{{dt.stu_f_name}} {{dt.stu_l_name}}</h5>
           <p class="card-text">{{dt.stu_message}}</p>
-          <p>{{dt.phone_number}}</p>
+          <p>{{dt.phone_number}} :::: {{dt.id}}</p>
         </div>
         <div style="display: flex; justify-content: space-evenly; margin-bottom: 13px;">
 
-          <form action="update/{{dt.id}}" method="post">
+          <form action="showupdate/{{dt.id}}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-success"> Update </button>
           </form>
