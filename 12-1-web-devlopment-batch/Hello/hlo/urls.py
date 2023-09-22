@@ -3,5 +3,6 @@ from hlo import views
 
 urlpatterns = [
     path('car', views.car),
-    path('mypage', views.showthis)
+    # path('mypage', views.showthis),
+    path("showdata/<x>", views.showupdate)
 ]  
