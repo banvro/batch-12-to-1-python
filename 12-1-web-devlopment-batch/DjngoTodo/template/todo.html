@@ -6,7 +6,7 @@
 
 <div style="padding-left: 18%;
 padding-right: 27%;">
-    <form action="savetodo" method="post">
+    <form action="savetodo" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Title</label>
@@ -19,6 +19,10 @@ padding-right: 27%;">
         <textarea name = "dec" style="width: 100%;
         height: 102px;
         border-radius: 8px;" placeholder="Enter your Desciption"></textarea>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Upload Image</label>
+        </div>
+        <input type="file" name = "img" >
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -27,7 +31,7 @@ padding-right: 27%;">
       </form>
 </div>
 
-
+<img src="car">
 
 <div>
     <table class="table">
@@ -48,6 +52,7 @@ padding-right: 27%;">
             <td>{{i.date}}</td>
           </tr>
           {% endfor %}
+
           
         </tbody>
       </table>
