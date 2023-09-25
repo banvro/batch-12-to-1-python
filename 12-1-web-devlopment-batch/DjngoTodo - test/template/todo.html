@@ -1,0 +1,110 @@
+{% extends "base.html" %} {% block body %}
+
+<img src="car.jpg">
+
+{% if check == "ok" %}
+<div style="padding-left: 18%; padding-right: 27%">
+  <form action="savetodo" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Title</label>
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        id="exampleInputEmail1"
+        placeholder="Enter title"
+        aria-describedby="emailHelp"
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Description</label>
+    </div>
+    <textarea
+      name="dec"
+      style="width: 100%; height: 102px; border-radius: 8px"
+      placeholder="Enter your Desciption"
+    ></textarea>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% elif check == "checkme" %}
+
+<div style="padding-left: 18%; padding-right: 27%">
+  <form action="/updatethis/{{datta.id}}" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Title</label>
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        id="exampleInputEmail1"
+        placeholder="Enter title"
+        aria-describedby="emailHelp"
+        value = "{{datta.title}}"
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Description</label>
+    </div>
+    <textarea
+      name="dec"
+      style="width: 100%; height: 102px; border-radius: 8px"
+      placeholder="Enter your Desciption"
+    >{{datta.desc}}</textarea>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+  </form>
+</div>
+
+{% endif %}
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Discription</th>
+        <th scope="col">Date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in data %}
+      <tr>
+        <th scope="row">{{i.id}}</th>
+        <td>{{i.title}}</td>
+        <td>{{i.desc}}</td>
+        <td>{{i.date}}</td>
+        <td style="display: flex; justify-content: space-evenly;">
+
+          <form action="/deletethis/{{i.id}}">
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+
+          <form action="/update/{{i.id}}">
+            <button type="submit" class="btn btn-success btn-sm">Update</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock body %}
