@@ -39,8 +39,9 @@ def savetodo(request):
     if request.method == "POST":
         titl = request.POST.get("title")
         dec = request.POST.get("dec")
+        image = request.FILES.get("img")
 
-        XYZ = mytodods(title = titl, desc = dec)
+        XYZ = mytodods(title = titl, desc = dec, img = image)
         XYZ.save()
         return redirect("mytodo")
 

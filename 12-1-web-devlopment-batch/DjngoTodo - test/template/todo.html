@@ -4,7 +4,7 @@
 
 {% if check == "ok" %}
 <div style="padding-left: 18%; padding-right: 27%">
-  <form action="savetodo" method="post">
+  <form action="savetodo" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Title</label>
@@ -28,6 +28,8 @@
       style="width: 100%; height: 102px; border-radius: 8px"
       placeholder="Enter your Desciption"
     ></textarea>
+
+    <input type="file" name="img" >
     <div class="mb-3 form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1" />
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -78,6 +80,7 @@
     <thead>
       <tr>
         <th scope="col">#</th>
+        <th scope="col">Image</th>
         <th scope="col">Title</th>
         <th scope="col">Discription</th>
         <th scope="col">Date</th>
@@ -88,6 +91,7 @@
       {% for i in data %}
       <tr>
         <th scope="row">{{i.id}}</th>
+        <th scope="row"><img src="/media/{{i.img}}" alt="img"></th>
         <td>{{i.title}}</td>
         <td>{{i.desc}}</td>
         <td>{{i.date}}</td>
