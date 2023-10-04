@@ -136,7 +136,16 @@
 
 
 
-qw = 23456123456
+# qw = 23456123456
+
+# import math
+
+
+
+# print(math.pow(2, 3))
+
+# print(3 ** 4)
+
 
 
 
