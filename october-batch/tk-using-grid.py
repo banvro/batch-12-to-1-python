@@ -33,13 +33,22 @@
 
 import tkinter as tk
 import mysql.connector
+from tkinter import messagebox
+# from tkinter import PhotoImage
 
-# con = mysql.connector.connect(host="localhost", username = "root", pssword = "1234", database = "yourdatabasename")
+
+
+
+
+
+# con = mysql.connector.connect(host="localhost", username = "root", pssword = "1234")
 # cursr = con.cursor()
 
-# cursr.execute("show database Like %s", ("Studnets",))
-# zx = cursr.fetchone()
+db_name = "Students"
 
+# cursr.execute(f"create database if not exists {db_name}")
+# zx = cursr.fetchone()
+# con.database = db_name
 # if not zx:
 #     cursr.execute("Create database Students")
 
@@ -58,8 +67,11 @@ def savedata():
     ent4.delete(0, tk.END)
 
     mymsg.config(text = "data saved sv=ucsessfullyy" )
+
+    messagebox.askquestion("Data Save", "Your Data Saved Sucessfully.")
     
 
+# Alter table tblnam modify comnnm dataype;
 
 window = tk.Tk()
 window.geometry("600x400")
