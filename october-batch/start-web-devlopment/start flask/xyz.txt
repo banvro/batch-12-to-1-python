@@ -1,0 +1,28 @@
+# flask => help us to design small size application.
+
+# MySQL
+
+# ORM => SeqlAlchmy
+
+
+
+# 1) WSGI
+#     http / https
+
+# 2) ASGI
+#     ws"/
+
+# pip install Flask
+
+
+
+
+
+
+
+
+
+
+
+
+
