@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
 
 myapp = Flask(__name__)
 
@@ -20,6 +20,21 @@ def contactus(abc):
 @myapp.route("/login")
 def loginpage():
     return render_template("authfile/login.html", name = "kriss moris")
+
+
+@myapp.route("/myform")
+def myform():
+    return render_template("myform.html")
+
+
+@myapp.route("/savethis", methods=["POST",])
+def savethis():
+    if request.method == "POST":
+        titl = request.form.get("title")
+        desc = request.form.get("msg")
+
+        print(titl, desc)
+    return redirect("/myform")
 
 
 if __name__ == "__main__":
