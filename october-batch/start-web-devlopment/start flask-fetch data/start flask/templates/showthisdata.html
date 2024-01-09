@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block xyz %} 
+<div style = "padding: 52px;">
+
+    <div class="row">
+        {% for data in allrecords %}
+        <div class="col-sm-6 mb-3 mb-sm-0" >
+          <div class="card" style = "margin-bottom: 21px;">
+            <div class="card-body">
+              <h5 class="card-title">Name : {{data[0]}}</h5>
+              <h5 class="card-title">Email : {{data[1]}}</h5>
+              <h5 class="card-title">Phone Number : {{data[2]}}</h5>
+              <p class="card-text">Message : {{data[3]}}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+</div>
+{% endblock xyz %}
