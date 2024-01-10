@@ -12,7 +12,14 @@
               <h5 class="card-title">Email : {{data[1]}}</h5>
               <h5 class="card-title">Phone Number : {{data[2]}}</h5>
               <p class="card-text">Message : {{data[3]}}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <div>
+                <form action="/updatedata/{{data[0]}}" method="post">
+                  <button class="btn btn-primary" type="submit">Update</button>
+                </form>
+                <form action="/deletethis/{{data[0]}}" method="post">
+                  <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
