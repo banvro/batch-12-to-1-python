@@ -3,7 +3,7 @@
 {% block xyz %}
  
 
-<form action="/save-this-data" method="post">
+<form action="/save-this-data" method="post" enctype="multipart/form-data">
     
 <div style="padding: 11%;">
     <h1 style="    text-align: center;
@@ -24,6 +24,11 @@
     <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Message</label>
         <textarea class="form-control" name="msg" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Upload Image</label>
+        <input type="file" name="img" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Phone Number">
     </div>
 
     <div style="text-align: center;">

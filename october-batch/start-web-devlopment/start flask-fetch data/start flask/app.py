@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import mysql.connector
+import os
 
 conn = mysql.connector.connect(host = "localhost", username = "root", password = "1234", database = "amazon")
 
@@ -24,16 +25,31 @@ def savethis():
         phnumber = request.form.get("number")
         msg = request.form.get("msg")
 
-        cuser.execute(f"insert into savemydataa values('{name}', '{phnumber}', '{thisemail}', '{msg}')")
-        conn.commit()
+        img = request.files.get("img")
+
+        if img:
+            img.save(os.path.join("static/images/", img.filename))
+            img_path = os.path.join("static/images/", img.filename)
+            print(img_path, "oooooooooooo")
+
+            
+
+        print(img, "tttttttttttttttttttt")
+        # cuser.execute(f"insert into savemydataa values('{name}', '{phnumber}', '{thisemail}', '{msg}')")
+        # conn.commit()
         return redirect("/showdata")
 
     return f"Data Saved !"
 
 @myapp.route("/showdata")
 def showingthis():
-    cuser.execute("select * from savemydataa;")
-    alldata = cuser.fetchall()
+    dt = request.args.get("query")
+    if dt:
+        cuser.execute(f"select * from savemydataa where Name = '{dt}'")
+        alldata = cuser.fetchall()
+    else:
+        cuser.execute("select * from savemydataa;")
+        alldata = cuser.fetchall()
     # print(alldata, "all data")
     return render_template("showthisdata.html", allrecords = alldata)
 
