@@ -24,19 +24,16 @@ def savethis():
         thisemail = request.form.get("email")
         phnumber = request.form.get("number")
         msg = request.form.get("msg")
-
-        img = request.files.get("img")
+        img = request.files.get("imgx")
+        # img = request.files["imgx"]
 
         if img:
-            img.save(os.path.join("static/images/", img.filename))
-            img_path = os.path.join("static/images/", img.filename)
-            print(img_path, "oooooooooooo")
+            img.save(os.path.join("static/myimages/", img.filename))
+            image_path = os.path.join("static/myimages/", img.filename)
 
-            
 
-        print(img, "tttttttttttttttttttt")
-        # cuser.execute(f"insert into savemydataa values('{name}', '{phnumber}', '{thisemail}', '{msg}')")
-        # conn.commit()
+        cuser.execute(f"insert into savemydataa values('{name}', '{phnumber}', '{thisemail}', '{msg}', '{image_path}')")
+        conn.commit()
         return redirect("/showdata")
 
     return f"Data Saved !"

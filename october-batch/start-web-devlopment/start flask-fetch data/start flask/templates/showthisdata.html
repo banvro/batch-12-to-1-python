@@ -6,7 +6,11 @@
     <div class="row">
         {% for data in allrecords %}
         <div class="col-sm-6 mb-3 mb-sm-0" >
-          <div class="card" style = "margin-bottom: 21px;">
+          <div class="card" style = "margin-bottom: 21px;    display: flex;
+          flex-direction: row;">
+            <div>
+              <img src={{data[4]}} >
+            </div>
             <div class="card-body">
               <h5 class="card-title">Name : {{data[0]}}</h5>
               <h5 class="card-title">Email : {{data[1]}}</h5>
