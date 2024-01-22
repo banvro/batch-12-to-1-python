@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block xyz %} 
+<div style = "padding: 52px;">
+
+    <div class="row">
+        {% for data in allrecords %}
+        <div class="col-sm-6 mb-3 mb-sm-0" >
+          <div class="card" style = "margin-bottom: 21px;    display: flex;
+          flex-direction: row;">
+            <div>
+              <img src={{data[4]}} >
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Name : {{data[0]}}</h5>
+              <h5 class="card-title">Email : {{data[1]}}</h5>
+              <h5 class="card-title">Phone Number : {{data[2]}}</h5>
+              <p class="card-text">Message : {{data[3]}}</p>
+              <div>
+                <form action="/updatedata/{{data[0]}}" method="post">
+                  <button class="btn btn-primary" type="submit">Update</button>
+                </form>
+                <form action="/deletethis/{{data[0]}}" method="post">
+                  <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+</div>
+{% endblock xyz %}
