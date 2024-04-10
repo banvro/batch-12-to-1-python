@@ -1,0 +1,56 @@
+
+Create a Database:
+CREATE DATABASE dbname;
+
+Use a Database:
+USE dbname;
+
+Create a Table:
+CREATE TABLE tablename (
+    column1 datatype,
+    column2 datatype,
+    ...
+);
+
+Insert Data into a Table:
+INSERT INTO tablename (column1, column2, ...)
+VALUES (value1, value2, ...);
+
+Select All Data from a Table:
+SELECT * FROM tablename;
+
+Select Specific Columns from a Table:
+SELECT column1, column2 FROM tablename;
+
+Select Data with a Condition:
+SELECT * FROM tablename WHERE condition;
+
+Update Data in a Table:
+UPDATE tablename SET column1 = value1, column2 = value2 WHERE condition;
+
+Delete Data from a Table:
+DELETE FROM tablename WHERE condition;
+
+Drop a Table:
+DROP TABLE tablename;
+
+Drop a Database:
+DROP DATABASE dbname;
+
+Select Distinct Values from a Column:
+SELECT DISTINCT column FROM tablename;
+
+Order Data by a Column:
+SELECT * FROM tablename ORDER BY column ASC|DESC;
+
+Limit the Number of Rows Returned:
+SELECT * FROM tablename LIMIT count;
+
+Join Two Tables:
+SELECT * FROM table1 INNER JOIN table2 ON table1.column = table2.column;
+
+Group Data:
+SELECT column, COUNT(*) FROM tablename GROUP BY column;
+
+Calculate Aggregate Functions:
+SELECT COUNT(*), SUM(column), AVG(column), MIN(column), MAX(column) FROM tablename;
