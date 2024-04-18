@@ -9,15 +9,27 @@ mymodel = joblib.load("fassion-cloths-predictor.joblib")
 
 def classify_image(img_path):
     img = Image.open(img_path)
-    resize_img = img.resize((28, 28))
 
+    # Convert the image to grayscale and resize it to 28x28
+    resize_img = img.convert('L').resize((28, 28))
+
+    # Convert the resized image to a numpy array
     img_array = np.array(resize_img)
 
+    # Flatten the image array to have 784 features
     shape_img = img_array.flatten()
 
+    # Ensure the shape is correct
+    if shape_img.shape != (784,):
+        raise ValueError("Image shape does not match (784,)")
+
+    # Predict using the model
     output = mymodel.predict(shape_img.reshape(1, -1))
 
     return output
+
+
+
 
 
 def upload_image():
@@ -27,13 +39,13 @@ def upload_image():
     myimg.thumbnail((300, 300))
     convert_tk = ImageTk.PhotoImage(myimg)
 
-    imshowu.config(image = convert_tk)
-
+    imshowu.config(image=convert_tk)
     imshowu.image = convert_tk
 
     zx = classify_image(filepath)
 
-    lbloutput.config(text = f"The Predicted Prdoct is : {zx}")
+    lbloutput.config(text=f"The Predicted Product is : {zx}")
+
 
 
 app = tk.Tk()
