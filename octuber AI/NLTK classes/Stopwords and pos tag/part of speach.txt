@@ -1,0 +1,30 @@
+
+Tag    	Part of Speech	              Description       	      	      	Example
+CC	Coordinating Conjunction	Links phrases or clauses	and, but, or
+CD	Cardinal Number       	Numerals representing quantity	               one, two, 3
+DT	Determiner          	Modifies nouns, introduces nouns      		the, a, an
+EX	Existential There          	States existence      		there is, there was
+FW	Foreign Word          	Foreign language terms	      	      	      	bonjour, amigo
+IN	Preposition/Subordinating Conjunction	Links phrases or clauses	of, in, by
+JJ	Adjective	                    Describes nouns               	 	big, blue, easy
+JJR	Adjective, Comparative	Comparative form of an adjective      		bigger, faster
+JJS	Adjective, Superlative	Superlative form of an adjective      		biggest, fastest
+NN	Noun, Singular	      	Names a person, place, or thing      	      		cat, car, John
+NNS	Noun, Plural	      	      	Plural form of a noun      	    	cats, cars
+NNP	Proper Noun, Singular	Names of specific entities      		London, John
+NNPS	Proper Noun, Plural	Plural form of a proper noun	      	      	Americas, Johns
+PDT	Predeterminer      		Precedes a determiner	      	      	all, both
+PRP	Personal Pronoun	Replaces nouns	he, she, it
+PRP$	Possessive Pronoun	Shows ownership         	his, her, its
+RB	Adverb	Modifies verbs, adjectives      	      		quickly, well
+RBR	Adverb, Comparative	Comparative form of an adverb	faster, better
+RBS	Adverb, Superlative	Superlative form of an adverb	fastest, best
+VB	Verb, Base Form	Base form of a verb	go, run, eat
+VBD	Verb, Past Tense	Past tense of a verb	went, ran, ate
+VBG	Verb, Gerund/Present Participle	Verb ending in -ing	going, running
+VBN	Verb, Past Participle	Past participle form of a verb	gone, eaten
+VBP	Verb, Present	Present tense (non-3rd person)	go, run
+VBZ	Verb, 3rd Person Singular Present	Present tense (3rd person)	goes, runs
+WDT	Wh-determiner	Introduces a noun clause or question	which, that
+WP	Wh-pronoun	Pronoun used in questions	who, what
+WRB	Wh-adverb	Adverb used in questions	where, when
